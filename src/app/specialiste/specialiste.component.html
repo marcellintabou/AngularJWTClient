@@ -1,0 +1,13 @@
+<div class="container">
+  <p></p>
+  <button class="btn btn-danger" (click)="onNewSpecialiste()" *ngIf="authService.isAdmin()">New specialiste</button>
+  <p></p>
+  <table class="table table-stripped">
+    <tr>
+      <th>ID</th><th>Specialiste</th>
+    </tr>
+    <tr *ngFor="let s of specialistes">
+        <td>{{s.id}}</td><td>{{s.nom}}</td>
+    </tr>
+  </table>
+</div>

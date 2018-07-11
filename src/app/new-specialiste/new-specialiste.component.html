@@ -1,0 +1,25 @@
+<div class="row col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">New specialiste</div>
+    <div class="panel-body">
+      <form #f="ngForm" (ngSubmit)="onSaveSpecialiste(f.value)">
+        <div class="form-group">
+          <label class="control-label">Nom:</label>
+          <input class="form-control" type="text" name="nom" ngModel="" required/>
+        </div>
+        <button class="btn btn-danger" type="submit" [disabled]="!f.valid">Save</button>
+      </form>
+    </div>
+  </div> 
+  <div class="panel panel-default" *ngIf="mode==2">
+    <div class="panel-heading">New specialiste added</div>
+    <div class="panel-body">
+      <div class="form-group container">
+        <div><label>ID: {{specialite.id}}</label></div>
+        <div><label>ID: {{specialite.nom}}</label></div>
+      </div>
+      <button class="btn btn-danger" (click)="mode=1">New specialiste</button>
+    </div>
+  </div>
+</div>
+  
